@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% if user.is_authenticated %}
+<body>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><h6 class="panel-title">TIPO CURSO</h6></center>
+    <br>
+  </div>
+  <div class="panel-body">
+     <form method="POST">
+      {% csrf_token %}
+
+        <div class="input-field col s6">
+          {% render_field form.nombre%}
+          <label for="first_name">{{form.nombre.label}}</label>
+        </div>
+       
+        
+        <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
+     </form>
+  </div>
+</div>
+<br>
+  
+    
+</body>
+ {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <div class="card-panel teal lighten-2">
+      <h2><a class="campo3" href="{% url 'appesi:Login' %}">Registrarse</a></h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endif%}
+{% endblock %}

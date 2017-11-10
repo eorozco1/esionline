@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+  <body background="{% static 'image/fondo1.jpg' %}">
+<center>
+<object id="header">
+  <form method='POST'>
+
+    {% csrf_token %}
+    <br><br><br><br><br><br><br><br><br>
+    <label>USUARIO</label><br>
+    {{ form.username }} <br>
+
+    <label>CONTRASEÑA</label><br>
+    {{ form.password }} <br><br>
+
+    <input type="submit" class="btn btn-success" value="INGRESAR"/>
+  </form>
+  </object>
+</body>
+<a  href="{% url 'appesi:index' %}">HOME</a></center><br>
+<center><a href="{% url 'appesi:CrearUsuario'%}"> CREAR USUARIO </a></center>
+
+
+
+
+

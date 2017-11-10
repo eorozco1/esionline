@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% load widget_tweaks %}
+{% block contenido%}
+<body>
+<br>
+<div class="well well-sm">
+     <h5>Cursos</h5>
+</div>
+
+ <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">
+
+          <table class="table table-striped table-hover ">
+
+          <thead>
+          <tr>
+              <th>Nombre del Curso o Carrera</th>
+              <th>Descripcion</th>
+             
+          </tr>
+        </thead>
+        {% for est in object_list %}
+        <tbody>
+          <tr>
+            <td>{{ est.tipocursof  }}</td>
+            <td>{{ est.descripcion }}</td>
+            
+          </tr>
+         
+        </tbody>
+         {% endfor %}
+
+</table>
+
+
+          </span>
+        </div>
+      </div>
+    </div>
+
+</body>
+{% endblock %}

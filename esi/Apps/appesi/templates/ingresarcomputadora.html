@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+{% if user.is_authenticated %}
+<body>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><h6 class="panel-title">INGRESAR COMPUTADORA</h6></center>
+    <br>
+  </div>
+  <div class="panel-body">
+     <form method="POST">
+      {% csrf_token %}
+
+      <div class="row">
+       <div class="file-field input-field col s12 m12">
+        {% if form.imagen.value %}
+        <div class="col s2 m2 12">
+          <span>Actual</span>
+            <img class="responsive-img" src="/media/{{ form.imagen.value }}">
+        </div>
+          {% endif %}
+           <br><br>
+       <div class="btn">
+       {% render_field form.imagen %}
+       <span>{{ form.imagen.label }} </span>
+      <input type="file" name="{{ form.imagen.html_name }}">
+    </div>
+  <div class="file-path-wrapper">
+  <imput class="file-path validate" type="text">
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+     <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
+     </form>
+  </div>
+</div>
+<br>
+    {% else %}
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <div class="card-panel teal lighten-2">
+      <h2><a class="campo3" href="{% url 'appesi:Login' %}">Registrarse</a></h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endif%}
+    {% endblock %}
+    

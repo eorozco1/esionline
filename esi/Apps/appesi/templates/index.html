@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% load widget_tweaks %}
+{% load static %}
+<body>
+<div >
+<br>
+<center>
+<h4>BIENVENIDOS A NUESTRO MUNDO DE TECNOLOGIA Y EDUCACION -ESI- COMPUTACION</h4>
+</center>
+<br>
+<center>
+
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="{% static 'image/esi1.jpg' %}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Especializa tu Educación!</h3>
+          <h5 class="light grey-text text-lighten-3">Somos ESI computacion</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static 'image/esi2.jpg' %}"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Elige la mejor opción para tu</h3>
+          <h5 class="light grey-text text-lighten-3">Educacion</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static 'image/esi3.jpg' %}"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Implementamos nueva</h3>
+          <h5 class="light grey-text text-lighten-3">Tecnologia.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="{% static 'image/esi1.jpg' %}"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Preparate hoy en tu!</h3>
+          <h5 class="light grey-text text-lighten-3">Formacion</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </cebter>
+</body>
+{% endblock %}

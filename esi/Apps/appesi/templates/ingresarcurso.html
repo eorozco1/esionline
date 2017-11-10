@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenido %}
+<body>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <center><h6 class="panel-title">INGRESAR INFORMACION DE CURSO</h6></center>
+    <br>
+  </div>
+  <div class="panel-body">
+     <form method="POST">
+      {% csrf_token %}
+
+       <div>
+       {% render_field form.tipocursof %}      
+       </div> 
+     
+        <div class="row">
+        <div class="input-field col s6">
+          {% render_field form.fechainicio type="date" class="datepicker" %}
+          <label for="first_name">{{form.fechainicio.label}}</label>
+        </div>
+    
+        <div class="input-field col s6">
+          {% render_field form.fechafinal type="date" class="datepicker"  %}
+          <label for="first_name">{{form.fechafinal.label}}</label>
+        </div>
+        </div>
+       
+        <div class="row">
+         <div class="input-field col s6">
+          {% render_field form.horarioini type="time" class="timepicker"  %}
+          <label for="first_name">{{form.horarioini.label}}</label>
+        </div>
+
+        <div class="input-field col s6">
+          {% render_field form.horariofin type="time" class="timepicker"  %}
+          <label for="first_name">{{form.horariofin.label}}</label>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="input-field col s6">
+          {% render_field form.dias%}
+          <label for="first_name">{{form.dias.label}}</label>
+        </div>
+
+        <div class="input-field col s6">
+          {% render_field form.requisitos%}
+          <label for="first_name">{{form.requisitos.label}}</label>
+        </div>
+        </div>
+       
+        <div class="row">
+         <div class="input-field col s6">
+          {% render_field form.descripcion%}
+          <label for="first_name">{{form.descripcion.label}}</label>
+        </div>
+
+        <div class="input-field col s6">
+          {% render_field form.objetivos%}
+          <label for="first_name">{{form.objetivos.label}}</label>
+        </div>
+        </div>
+
+        <div class="row">
+         <div class="input-field col s6">
+          {% render_field form.dirigido%}
+          <label for="first_name">{{form.dirigido.label}}</label>
+        </div>
+
+
+        <div class="col s12">
+          Costo Q:
+          <div class="input-field inline">
+            {% render_field form.costo%}
+            <label for="email" data-error="wrong" data-success="right">{{form.costo.label}}</label>
+          </div>
+        </div>
+       
+       <div class="col s12">
+          Costo Q:
+          <div class="input-field inline">
+            {% render_field form.costototal%}
+            <label for="email" data-error="wrong" data-success="right">{{form.costototal.label}}</label>
+          </div>
+        </div>
+      </div>
+  <div> 
+  
+  {% render_field form.tipopagof %}           
+  
+  </div> 
+
+     <br><a><input type="submit" value = "Guardar" name="Guardar"></a><br>
+     </form>
+  </div>
+</div>
+<br>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <div class="card-panel teal lighten-2">
+      <h2><a class="campo3" href="{% url 'appesi:Login' %}">Registrarse</a></h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endblock %}
+    
+

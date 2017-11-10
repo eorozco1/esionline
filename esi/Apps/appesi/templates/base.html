@@ -1,0 +1,178 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <head>
+   
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Esi Computación</title>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/shop-homepage.css' %}" rel="stylesheet">
+    <!--materialize CSS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
+   
+     <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    
+
+
+
+   
+
+  </head>
+
+
+  <body background="{% static 'image/fondo1.jpg' %}">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+       {% if user.is_authenticated %}  
+    <h6> Bienvenido: {{user.username}}</h6>&nbsp; &nbsp; &nbsp; &nbsp;
+    <h5><A HREF="{% url 'appesi:logout' %}">Salir</A></h5>
+      {% else %}
+    <h7><A HREF="{% url 'appesi:Login' %}">Administrador</A></h7>
+      {% endif %}   
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'appesi:index'%}">Inicio
+                <span class="sr-only"></span>
+           </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'appesi:quien' %}">
+              Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="">Computadoras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Accesorios</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'appesi:contacto' %}">
+              Contáctenos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Page Content -->
+   
+   <div>
+  
+      <div class="row">
+
+        <div >
+        
+          <center>
+          <h4 class="my-4">CURSOS</h4>
+          </center>
+          <div class="list-group">
+            <a href="{% url 'appesi:ListCursos' %}" class="list-group-item">Mineduc</a>
+            <a href="#" class="list-group-item">Dibujo y Diseño</a>
+            <a href="#" class="list-group-item">Autocad</a>
+          </div>
+         
+      </div>
+        <!-- /.col-lg-3 -->
+      <div class="container">
+       {% block contenido %}
+       {% endblock %}
+
+      </div>
+      
+          <!-- /.row -->
+
+        </div>
+
+   
+        <!-- /.col-lg-9 -->
+        </div>
+      <!-- /.row -->
+    
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website Esi Computacion 2017</p>
+      <!-- /.container -->
+    </footer>
+
+  
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <!--materialize js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    
+ 
+   <script> 
+    
+     $(document).ready(function() {
+    $('select').material_select();
+     });
+   </script>
+   
+   <script>
+      $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    format: 'yyyy-mm-dd',
+    today: 'Hoy',
+    clear: 'Limpiar',
+    close: 'Listo',
+    closeOnSelect: false// Close upon selecting a date,
+    });
+
+    </script>
+  
+    <script>
+   $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+    </script>
+    
+
+    <script>
+      $('.timepicker').pickatime({
+    default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: false, // Use AM/PM or 24-hour format
+    donetext: 'OK', // text for done-button
+    cleartext: 'Clear', // text for clear-button
+    canceltext: 'Cancel', // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function(){} //Function for after opening timepicker
+  });
+    </script>
+
+    <script>
+     $(document).ready(function(){
+      $('.slider').slider();
+    });
+    </script>
+
+  
+
+
+  </body>
+
+</html>
